@@ -1,5 +1,5 @@
 module.exports = {
-    errorHandler: (err) => {
-        throw new Error(err);
-    }
-}
+  errorHandler: err => {
+    throw new Error(err);
+  },
+};

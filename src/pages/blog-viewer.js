@@ -1,26 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import {Button} from 'antd';
-import Quill from 'quill';
-import 'quill/dist/quill.snow.css';
+import React, { useCallback } from 'react';
+import { Input } from 'antd';
+import ReactQuill from 'react-quill';
 
-const BlogPostViewer = () => {
-    const contentContainer = useRef(null);
-    
-    useEffect(() => {
-        let article = document.createElement('article');
-        let quill = new Quill(article);
-        
-        setTimeout(() => {contentContainer.current.appendChild(article)}, 0);
-    }, []);
+export default function BlogViewr(props) {
+  const getDelta = useCallback((value, delta, source, editor) => {
+    console.log({ value, delta, source, editor });
+  }, []);
 
-    return (
-        <main>
-            <Button>Edit Post</Button>
-            <section ref={contentContainer}>
-                
-            </section>
-        </main>
-    );
+  return (
+    <main className="post-editor">
+      <ReactQuill onChange={getDelta} style={{ height: '60vh' }} />
+    </main>
+  );
 }
-
-export default BlogPostViewer;

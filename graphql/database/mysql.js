@@ -1,14 +1,14 @@
-require('dotenv').config();
+require("dotenv").config();
 
 let config = {
-    client: 'mysql2',
+    client: "mysql2",
     connection: {
-        host:process.env.MYSQL_HOST,
-        user:process.env.MYSQL_USER,
-        password:process.env.MYSQL_PASS,
-        database:process.env.MYSQL_DB,
-        mutipleStatements: true
-    }
-}
+        host: process.env.MYSQL_HOST,
+        user: process.env.MYSQL_USER,
+        password: process.env.MYSQL_PASS,
+        database: process.env.MYSQL_DB,
+        mutipleStatements: true,
+    },
+};
 
-module.exports = require('knex')(config)
+module.exports = require("knex")(config);

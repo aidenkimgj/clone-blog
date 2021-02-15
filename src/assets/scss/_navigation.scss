@@ -31,8 +31,6 @@
             font-size: 18px;
             margin-left: 15px;
         }
-
-        
     }
 
     .ion-ios-menu {
@@ -98,7 +96,9 @@
                 padding-top: 20px;
             }
 
-            ul, li, .menu-avatar-container {
+            ul,
+            li,
+            .menu-avatar-container {
                 width: 100%;
             }
 
@@ -109,7 +109,6 @@
             &.active {
                 left: 0px;
             }
-        
         }
         .ion-ios-menu {
             display: flex;

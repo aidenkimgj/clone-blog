@@ -1,36 +1,37 @@
-import React from 'react';
-import { MasonryPost, PostMasonry, PostGrid } from '../components/common/';
-import trending from '../assets/mocks/trending';
-import featured from '../assets/mocks/featured';
+import React from "react";
+import { MasonryPost, PostMasonry, PostGrid } from "../components/common/";
+import trending from "../assets/mocks/trending";
+import featured from "../assets/mocks/featured";
 
 const trendingConfig = {
     2: {
-        gridArea: '1 / 2 / 3 / 3'
-    }
-}
+        gridArea: "1 / 2 / 3 / 3",
+    },
+};
 
 const featuredConfig = {
     0: {
-        gridArea: '1 / 1 / 2 / 3',
-        height: '300px'
+        gridArea: "1 / 1 / 2 / 3",
+        height: "300px",
     },
     1: {
-        height: '300px'
+        height: "300px",
     },
     3: {
-        height: '630px',
-        marginLeft: '30px',
-        width: '630px'
-    }
-}
+        height: "630px",
+        marginLeft: "30px",
+        width: "630px",
+    },
+};
 
-const mergeStyles = function(posts, config) {
+const mergeStyles = function (posts, config) {
     posts.forEach((post, index) => {
         post.style = config[index];
-        post.author = 'Aiden Kim'
-        post.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        post.author = "Aiden Kim";
+        post.description =
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
     });
-}
+};
 
 const recentPosts = [...trending, ...featured, ...featured];
 
@@ -40,19 +41,21 @@ mergeStyles(featured, featuredConfig);
 const lastPost = featured.pop();
 
 export default function Home() {
-    return(
+    return (
         <main className="home">
             <section className="container">
                 <div className="row">
                     <section className="featured-posts-container">
-                        <PostMasonry posts={featured} columns={2} tagsOnTop={true} />
+                        <PostMasonry
+                            posts={featured}
+                            columns={2}
+                            tagsOnTop={true}
+                        />
                         <MasonryPost post={lastPost} tagsOnTop={true} />
                     </section>
-                    
-                    
                 </div>
             </section>
-            
+
             <section className="bg-white">
                 <section className="container">
                     <div className="row">
@@ -61,16 +64,12 @@ export default function Home() {
                     </div>
                 </section>
             </section>
-            
 
             <section className="container">
                 <div className="row">
                     <PostMasonry posts={trending} columns={3} />
                 </div>
             </section>
-            
         </main>
-    
-    ); 
-        
+    );
 }
