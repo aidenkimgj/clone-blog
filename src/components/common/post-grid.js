@@ -29,7 +29,7 @@ export default function PostGrid({ posts }) {
             <figure>
               <Link to={`/post/${post?.id}`}>
                 <img
-                  src={require(`../../assets/images/${post.image}`).default}
+                  src={require(`../../assets/images/${post.image}`)}
                   alt={post.image}
                 />
               </Link>
